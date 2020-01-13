@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css'
 
-const todo=[
+const initialState=[
   {
     name: 'Organize Garage',
     id: 1528817077286,
@@ -25,7 +26,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      todoList: todo,
+      todoList: initialState,
       life: 42
     }
   }
@@ -53,7 +54,7 @@ class App extends Component {
       completed: false
     }
     this.setState({
-      todo: [...this.state.todoList, newItem]
+      todoList: [...this.state.todoList, newItem]
     })
   }
 
@@ -61,9 +62,11 @@ class App extends Component {
     console.log('rendering...');
 
     return (
-      <div>
-        <h2>Todo App!</h2>
-        <TodoForm addItem={this.addItem}/>
+      <div className='App'>
+        <div className='header'>
+          <h2>Todo App!</h2>
+          <TodoForm addItem={this.addItem}/>
+        </div>
         <TodoList
           todo={this.state.todoList}
           toggleItem={this.toggleItem}
