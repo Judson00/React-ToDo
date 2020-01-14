@@ -35,6 +35,8 @@ class App extends React.Component {
         todos: [...this.state.todos, newTodo], 
         todo: '' 
       });
+    }else{
+      alert("Todo is a Required Field")
     }
   };
 
