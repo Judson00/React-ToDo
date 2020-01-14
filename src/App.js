@@ -27,6 +27,7 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   addTodo = e => {
     e.preventDefault();
+    
     const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
     this.setState({ 
       todos: [...this.state.todos, newTodo], 
