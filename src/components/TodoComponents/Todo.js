@@ -3,7 +3,7 @@ import React from 'react';
 const Todo = props => {
   return (
     <div
-      style={props.todo.completed ? { textDecoration: 'line-through' } : null}
+      className={`todo${props.todo.completed ? ' purchased' : ''}`}
       onClick={() => props.handleToggleComplete(props.todo.id)}
     >
       {props.todo.task}
